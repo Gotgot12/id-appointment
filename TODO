@@ -1,0 +1,34 @@
+/*
+TODO
+28 à 45
+
+console.log(
+              document.getElementsByClassName('fc-time')[compteur].innerHTML,
+            );
+
+let els = document.getElementsByClassName("fc-title");
+let compteur = 0;
+Array.prototype.forEach.call(els, function(el) {
+    // Do stuff here
+    if (el.innerHTML == "&nbsp;"){
+     console.log(document.getElementsByClassName("fc-time")[compteur].innerHTML);   
+        console.log((new URL("https://teleservices.paris.fr/rdvtitres/" + document.getElementsByClassName("fc-day-grid-event fc-h-event fc-event fc-start fc-end")[compteur].getAttribute("href"))).searchParams.get('starting_date_time'));
+    }
+    
+    compteur += 1;
+});
+
+
+(new URL("https://teleservices.paris.fr/rdvtitres/" + document.getElementsByClassName("fc-day-grid-event fc-h-event fc-event fc-start fc-end")[1].getAttribute("href"))).searchParams.get('starting_date_time');
+
+
+let els = document.getElementsByClassName("fc-title");
+let compteur = 0;
+Array.prototype.forEach.call(els, function(el) {
+    // Do stuff here
+    if (el.innerHTML == "&nbsp;"){
+     console.log(document.getElementsByClassName("fc-time")[compteur].innerHTML);   
+    }
+    compteur += 1;
+});
+*/
