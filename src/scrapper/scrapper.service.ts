@@ -3,12 +3,12 @@ import * as puppeteer from 'puppeteer';
 
 @Injectable()
 export class ScrapperService {
-  async getDataViaPuppeteer() {
+  async getDataViaPuppeteer(): Promise<object> {
     const appointmentList = [];
-    for (let i = 28; i <= 45; i++) {
+    for (let i = 44; i <= 45; i++) {
       const url = `https://teleservices.paris.fr/rdvtitres/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentCalendar&id_form=${i}`;
       const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
       });
 
       const page = await browser.newPage();
@@ -39,16 +39,24 @@ export class ScrapperService {
             } else {
               town = i - 25;
             }
-            obj = { town: town, date: date };
+            const link =
+              'https://teleservices.paris.fr/rdvtitres/' +
+              document
+                .getElementsByClassName(
+                  'fc-day-grid-event fc-h-event fc-event fc-start fc-end',
+                )
+                [compteur].getAttribute('href');
+            obj = { town: town, date: date, linkAppointment: link };
             townList.push(obj);
+            console.log(typeof townList);
           }
           compteur += 1;
         });
         return townList;
       }, i);
       appointmentList.push(results);
-      await browser.close();
     }
-    console.log(appointmentList);
+
+    return appointmentList;
   }
 }
