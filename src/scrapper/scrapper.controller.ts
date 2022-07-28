@@ -12,9 +12,13 @@ export class ScrapperController {
     const b = [];
     for (let i = 0; i < Object.keys(a).length; i++) {
       for (let k = 0; k < a[i].length; k++) {
+        const dayAndHour = a[i][k].date.split('T');
+        let day = dayAndHour[0].split('-');
+        day = day[2] + '/' + day[1] + '/' + day[0];
         b.push({
           town: a[i][k].town,
-          date: a[i][k].date,
+          day: day,
+          hour: dayAndHour[1],
           linkAppointment: a[i][k].linkAppointment,
         });
       }

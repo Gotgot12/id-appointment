@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+#all-appointment {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.appointment {
+    width: 15%;
+    border: 2px solid rgb(10, 2, 116);
+    margin-right: 3%;
+    border-radius: 6%;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+a h3 {
+    color: rgba(11, 11, 103, 0.747);
+}
+
+a:hover {
+    background-color: rgb(196, 196, 196);
+    color: white;
+}
+
+.town, .time, .day {
+    font-size: 18px;
+}
+
+span {
+    font-weight: bold;
+    font-size: 20px;
+}

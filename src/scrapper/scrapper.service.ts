@@ -5,7 +5,7 @@ import * as puppeteer from 'puppeteer';
 export class ScrapperService {
   async getDataViaPuppeteer(): Promise<object> {
     const appointmentList = [];
-    for (let i = 44; i <= 45; i++) {
+    for (let i = 45; i <= 45; i++) {
       const url = `https://teleservices.paris.fr/rdvtitres/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentCalendar&id_form=${i}`;
       const browser = await puppeteer.launch({
         headless: true,

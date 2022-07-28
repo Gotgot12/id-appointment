@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Rendez-vous pièces d'identité</title>
 </head>
-
 <body>
-    {{#each message}}
-    <div>
-        <span>{{this.town}}</span>
-        <span>{{this.date}}</span>
+    <div id="presentation">
+        <h1>Rendez-vous de carte d'identité et de passeport sur Paris</h1>
+        <h3>Marre d'attendre 9 semaines pour trouver un rendez-vous de pièces d'identité sur Paris ?</h3>
+        <h4>J'ai trouvé la solution. Récupérer tous les rendez-vous libres. Il suffit juste de cliquer et remplir tes informations</h4>
     </div>
-    <br/>
-    {{/each}}
+    
+    <div id="all-appointment">
+        {{#each message}}
+        <div class="appointment">
+            <a href="{{this.linkAppointment}}">
+                <h3 class="town" >Mairie du <span>{{this.town}}e</span></h3>
+                <h3 class="day">{{this.day}}</h3>
+                <h3 class="time">{{this.hour}}</h3>
+            </a>
+        </div>
+       {{/each}}
+    </div>
 </body>
-
 </html>
